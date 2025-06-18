@@ -56,3 +56,17 @@ Gráfica del rendimiento:
 
 ## Análisis Resultados
 
+Los resultados muestran que entre cada incremento de tamaño, el tiempo promedio crece consistentemente. Con cada prueba, se duplica el tamaño del tablero y el tiempo se multiplica aproximadamente por 4, coincidiendo con una complejidad cuadrática O(n²).
+
+| Tamaño (n x n) | Tiempo promedio (segundos) | Incremento relativo |
+| -------------- | -------------------------- | ------------------------------ |
+| 32 x 32        | 0.00195                    | —                              |
+| 64 x 64        | 0.00799                    | \~4.09x tiempo                 |
+| 128 x 128      | 0.03187                    | \~3.99x tiempo                 |
+| 256 x 256      | 0.12751                    | \~4.00x tiempo                 |
+| 512 x 512      | 0.54182                    | \~4.25x tiempo                 |
+| 1024 x 1024    | 2.2158                     | \~4.09x tiempo                 |
+
+El cuello de botella en términos de tiempo que se puede observación es la operación que cuenta cuantos vecinos vivos tiene cada celda ya  que se repite para todas las celdas en cada iteración.  Además, el código no tiene elementos de paralelismo que permitiriían dividir el tablero y procesar varias partes al mismo tiempo. 
+
+Si se fuera a implementar esto, el juego podría ser más rápido en proporción a cuantos núcleos disponibles. Conforme la tabla siga creciendo, optimizar sería esencial para tener tiempos de ejecución mejores.
