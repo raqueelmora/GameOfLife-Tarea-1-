@@ -1,12 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.animation as animation
+import time
 
 class GameOfLife:
     def __init__(self, rows, cols, initial_state=None):
         self.rows = rows
         self.cols = cols
-        # Inicializa el estado del tablero
         if initial_state is None:
             self.board = np.random.choice([0, 1], size=(rows, cols), p=[0.7, 0.3])
         else:
@@ -33,28 +32,40 @@ class GameOfLife:
                     total += self.board[i, j]
         return total
 
-    def get_state(self):
-        return self.board
-
     def run(self, steps):
         for _ in range(steps):
             self.step()
 
-    def visualize(self, steps):
-        fig, ax = plt.subplots()
-        img = ax.imshow(self.board, cmap='binary')
+def measure_performance(sizes, steps):
+    times = []
+    for size in sizes:
+        rows, cols = size, size  # Grilla cuadrada
+        game = GameOfLife(rows, cols)
+        
+        start_time = time.time()
+        game.run(steps)
+        end_time = time.time()
+        
+        elapsed_time = end_time - start_time
+        avg_time_per_step = elapsed_time / steps
+        times.append(avg_time_per_step)
+        print(f'Tamaño: {size}x{size}, Tiempo promedio por iteración: {avg_time_per_step:.6f} segundos')
+    return times
 
-        def update(frame):
-            self.step()
-            img.set_array(self.board)
-            return img,
-
-        ani = animation.FuncAnimation(fig, update, frames=steps, interval=100, blit=True)
-        plt.title("Juego de la vida")
-        plt.show()
-
+def plot_performance(sizes, times):
+    plt.figure(figsize=(10, 6))
+    plt.plot(sizes, times, 'o-', label='Tiempo promedio por iteración')
+    plt.xscale('log')
+    plt.yscale('log')
+    plt.xlabel('Tamaño de entrada (número de celdas)')
+    plt.ylabel('Tiempo promedio por iteración (segundos)')
+    plt.title('Rendimiento del Juego de la Vida de Conway')
+    plt.grid(True)
+    plt.legend()
+    plt.show()
 
 if __name__ == "__main__":
-    rows, cols = 50, 50  # Tamaño de la grilla
-    game = GameOfLife(rows, cols)
-    game.visualize(100)  # Ejecutar y visualizar 100 pasos
+    sizes = [32, 64, 128, 256, 512, 1024]  # Tamaños de la grilla
+    steps = 10  # Número de iteraciones
+    times = measure_performance(sizes, steps)
+    plot_performance(sizes, times)
