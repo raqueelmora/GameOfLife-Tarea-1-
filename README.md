@@ -30,3 +30,10 @@ pip install numpy matplotlib
 Asegúrate de estar en el directorio correcto donde se encuentran los archivos antes de ejecutar los comandos.
 Las visualizaciones se generarán en ventanas emergentes, asegúrate de que tu entorno de desarrollo soporte gráficos.
 
+## Análisis
+
+### Simulación y Visualización
+ Aquí se puede visualizar el Game of Life con un tamaño fijo (50x50) y observar la dinámica del autómata.
+
+## Análisis de rendimiento
+
