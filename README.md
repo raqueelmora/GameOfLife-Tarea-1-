@@ -1,6 +1,7 @@
 # Game of Life | Tarea 1
 
 Raquel Mora
+
 Josimark Perez
 
 ## Descripción del Repositorio
