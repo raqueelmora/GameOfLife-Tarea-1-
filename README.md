@@ -30,10 +30,29 @@ pip install numpy matplotlib
 Asegúrate de estar en el directorio correcto donde se encuentran los archivos antes de ejecutar los comandos.
 Las visualizaciones se generarán en ventanas emergentes, asegúrate de que tu entorno de desarrollo soporte gráficos.
 
-## Análisis
+## Ejecución
 
 ### Simulación y Visualización
  Aquí se puede visualizar el Game of Life con un tamaño fijo (50x50) y observar la dinámica del autómata.
 
+https://ulead-my.sharepoint.com/:v:/g/personal/raquel_mora_ulead_ac_cr/EXO9Gl0W06FAs-E-xwUtiMwBcNmyQwofhGzCcCjw6xdXkQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=LrR93l
+
+(Usar Link para ver Visualización)
+
 ## Análisis de rendimiento
+Se probó la simulación con diferentes tamaños (32, 64, 128, 256, 512, 1024) y 10 iteraciones cada una.
+
+Estos fueron nuestros resultados:
+
+Tamaño: 32x32, Tiempo promedio por iteración: 0.001953 segundos
+Tamaño: 64x64, Tiempo promedio por iteración: 0.007990 segundos
+Tamaño: 128x128, Tiempo promedio por iteración: 0.031868 segundos
+Tamaño: 256x256, Tiempo promedio por iteración: 0.127511 segundos
+Tamaño: 512x512, Tiempo promedio por iteración: 0.541824 segundos
+Tamaño: 1024x1024, Tiempo promedio por iteración: 2.215804 segundos
+
+Gráfica del rendimiento:
+<img width="931" alt="Screenshot 2025-06-18 at 5 03 22 PM" src="https://github.com/user-attachments/assets/a6745d2f-557f-41ec-adf6-06db8bedddac" />
+
+## Análisis Resultados
 
