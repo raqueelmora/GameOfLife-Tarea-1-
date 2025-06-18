@@ -67,6 +67,6 @@ Los resultados muestran que entre cada incremento de tamaño, el tiempo promedio
 | 512 x 512      | 0.54182                    | \~4.25x tiempo                 |
 | 1024 x 1024    | 2.2158                     | \~4.09x tiempo                 |
 
-El cuello de botella en términos de tiempo que se puede observación es la operación que cuenta cuantos vecinos vivos tiene cada celda ya  que se repite para todas las celdas en cada iteración.  Además, el código no tiene elementos de paralelismo que permitiriían dividir el tablero y procesar varias partes al mismo tiempo. 
+El cuello de botella en términos de tiempo es la operación que cuenta cuantos vecinos vivos tiene cada celda ya  que se repite para todas las celdas en cada iteración.  Además, el código no tiene elementos de paralelismo que permitiriían dividir el tablero y procesar varias partes al mismo tiempo. 
 
 Si se fuera a implementar esto, el juego podría ser más rápido en proporción a cuantos núcleos disponibles. Conforme la tabla siga creciendo, optimizar sería esencial para tener tiempos de ejecución mejores.
